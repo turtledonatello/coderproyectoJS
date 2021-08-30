@@ -1,0 +1,10 @@
+@mixin Button($padding, $bg, $color, $borderRadius, $border: none) {
+  border: $border;
+  border-radius: $borderRadius;
+  background: $bg;
+  color: $color;
+  cursor: pointer;
+  padding: $padding;
+  margin: 10px 0px;
+  transition: 0.6s;
+}

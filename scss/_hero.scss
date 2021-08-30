@@ -1,0 +1,37 @@
+.hero {
+  /* background: url('../img/hero/bg.svg') 0px -50px no-repeat; */
+  background-size: cover;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  @media screen and (max-width: $mobile) {
+    background-size: 100% 100%;
+  }
+  position: relative;
+  &__bgleft {
+    position: absolute;
+    background: $primaryColor;
+    left: -90px;
+    transform: skew(-15deg);
+    height: 100%;
+    width: 70%;
+  }
+  h2 {
+    font-size: 50px;
+    max-width: 600px;
+    color: #222;
+    z-index: 1;
+    @media screen and (max-width: $tablet) {
+      max-width: 90%;
+      font-size: 40px;
+      text-align: center;
+      padding: 100px 0px;
+    }
+  }
+  img {
+    width: 450px;
+    @media screen and (max-width: $tablet) {
+      display: none;
+    }
+  }
+}

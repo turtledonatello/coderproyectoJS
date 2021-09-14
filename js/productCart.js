@@ -4,22 +4,22 @@ var $totalCart = document.querySelector('#totalCart');
 
 //Agregar al carrito
 function addOnCart(product) {
-  $containerWidgetProducts.innerHTML = '';
-  //Acá uso jquery
-  $('body').append(`
-  <div class="cart__notification">
-    <p><i class="fas fa-check-square"></i> Producto agregado</p>
-  </div>  
-  `);
-  //Acá uso jquery
-  $('.cart__notification').animate({
-    top: '30px',
-    right: '20px',
-    transition: '.1s',
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 1400,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener("mouseenter", Swal.stopTimer);
+      toast.addEventListener("mouseleave", Swal.resumeTimer);
+    },
   });
-  setTimeout(() => {
-    $('.cart__notification').css('transform', 'translateY(-100px)');
-  }, 2000);
+
+  Toast.fire({
+    icon: "success",
+    title: `Producto ${product.name} agregado al carrito`,
+  });
   let exist = cart.some((prod) => prod.id === product.id);
   if (!exist) {
     cart.push(product);

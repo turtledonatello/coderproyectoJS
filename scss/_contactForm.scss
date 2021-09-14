@@ -1,0 +1,31 @@
+.contact {
+  &__container {
+    width: 500px;
+    margin: 0 auto;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__form {
+    background-color: red;
+    &--input {
+      display: flex;
+      flex-direction: column;
+      margin: 10px;
+      label {
+        &::before {
+          content: "*";
+          color: red;
+        }
+      }
+      input[type="text"],
+      input[type="password"] {
+        @include inputForm;
+      }
+      input[type="submit"] {
+        @include Button(20px, $primaryColor, $white, 5px);
+      }
+    }
+  }
+}

@@ -282,11 +282,43 @@ header ul {
 
 .hero img {
   width: 450px;
+  -webkit-animation: float 4s ease-in-out infinite;
+          animation: float 4s ease-in-out infinite;
 }
 
 @media screen and (max-width: 768px) {
   .hero img {
     display: none;
+  }
+}
+
+@-webkit-keyframes float {
+  0% {
+    -webkit-transform: translatey(0px);
+            transform: translatey(0px);
+  }
+  50% {
+    -webkit-transform: translatey(-20px);
+            transform: translatey(-20px);
+  }
+  100% {
+    -webkit-transform: translatey(0px);
+            transform: translatey(0px);
+  }
+}
+
+@keyframes float {
+  0% {
+    -webkit-transform: translatey(0px);
+            transform: translatey(0px);
+  }
+  50% {
+    -webkit-transform: translatey(-20px);
+            transform: translatey(-20px);
+  }
+  100% {
+    -webkit-transform: translatey(0px);
+            transform: translatey(0px);
   }
 }
 
@@ -318,10 +350,10 @@ header ul {
   background: none;
   border: 15px;
   cursor: pointer;
-  color: #fff;
+  color: #9044d8;
 }
 
-.filter form div input[type='submit'] {
+.filter form div input[type="submit"] {
   background: #9044d8;
   border-radius: 5px;
   cursor: pointer;
@@ -329,7 +361,7 @@ header ul {
   transition: ease 0.6s;
 }
 
-.filter form div input[type='submit']:hover {
+.filter form div input[type="submit"]:hover {
   background: #fff;
   color: #9044d8;
 }
@@ -520,6 +552,71 @@ header ul {
   margin: 10px auto;
 }
 
+.contact__container {
+  width: 500px;
+  margin: 0 auto;
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact__form {
+  background-color: red;
+}
+
+.contact__form--input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 10px;
+}
+
+.contact__form--input label::before {
+  content: "*";
+  color: red;
+}
+
+.contact__form--input input[type="text"],
+.contact__form--input input[type="password"] {
+  -webkit-transition: 1s;
+  transition: 1s;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  -webkit-box-shadow: inset 0 0 0 2px #222;
+          box-shadow: inset 0 0 0 2px #222;
+  outline: none;
+}
+
+.contact__form--input input[type="text"]:focus,
+.contact__form--input input[type="password"]:focus {
+  -webkit-box-shadow: inset 0 0 0 2px #9044d8;
+          box-shadow: inset 0 0 0 2px #9044d8;
+}
+
+.contact__form--input input[type="submit"] {
+  border: none;
+  border-radius: 5px;
+  background: #9044d8;
+  color: #fff;
+  cursor: pointer;
+  padding: 20px;
+  margin: 10px 0px;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
 footer {
   background: #222;
   display: -webkit-box;
@@ -585,11 +682,12 @@ footer p {
 }
 
 .buy__form--input label::before {
-  content: '*';
+  content: "*";
   color: red;
 }
 
-.buy__form--input input[type='text'] {
+.buy__form--input input[type="text"],
+.buy__form--input input[type="password"] {
   -webkit-transition: 1s;
   transition: 1s;
   padding: 10px;
@@ -600,12 +698,13 @@ footer p {
   outline: none;
 }
 
-.buy__form--input input[type='text']:focus {
+.buy__form--input input[type="text"]:focus,
+.buy__form--input input[type="password"]:focus {
   -webkit-box-shadow: inset 0 0 0 2px #9044d8;
           box-shadow: inset 0 0 0 2px #9044d8;
 }
 
-.buy__form--input input[type='submit'] {
+.buy__form--input input[type="submit"] {
   border: none;
   border-radius: 5px;
   background: #9044d8;
@@ -711,7 +810,7 @@ footer p {
 }
 
 .success-checkmark .check-icon::before, .success-checkmark .check-icon::after {
-  content: '';
+  content: "";
   height: 100px;
   position: absolute;
   background: #ffffff;

@@ -1,5 +1,6 @@
 let url = `https://api.mercadolibre.com/sites/MLA/search?q=celulares&limit=10`;
 
+//Template para productos
 function template(product) {
   let template = `
     <div class="card">
@@ -21,12 +22,13 @@ function template(product) {
   `;
   return template;
 }
+
 //Pedido a Mercadolibre por ajax
 $.ajax({
-  method: 'GET',
+  method: "GET",
   url: url,
   success: (res) => {
-    let container = document.querySelector('#containerProductsMeli');
+    let container = document.querySelector("#containerProductsMeli");
 
     res.results.map((product) => {
       const { title, price, thumbnail } = product;
